@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TxtClipper – Privacy Policy</title>
+  <meta name="description" content="TxtClipper Privacy Policy – Offline text tools app with zero data collection." />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --card: #21262d;
+      --border: #30363d;
+      --primary: #00e5ff;
+      --primary-dim: rgba(0,229,255,0.12);
+      --secondary: #64ffda;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --success: #56d364;
+      --info: #58a6ff;
+      --warning: #e3b341;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   'Helvetica Neue', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 26px;
+    }
+
+    .header-text h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+
+    .header-text p {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 1px solid;
+    }
+
+    .badge-cyan { color: var(--primary); border-color: rgba(0,229,255,0.35); background: rgba(0,229,255,0.08); }
+    .badge-green { color: var(--success); border-color: rgba(86,211,100,0.35); background: rgba(86,211,100,0.08); }
+    .badge-blue { color: var(--info); border-color: rgba(88,166,255,0.35); background: rgba(88,166,255,0.08); }
+    .badge-yellow { color: var(--warning); border-color: rgba(227,179,65,0.35); background: rgba(227,179,65,0.08); }
+
+    /* ── Key Facts ── */
+    .key-facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .key-fact {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .fact-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .fact-title {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .fact-body { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+    .fact-cyan .fact-title { color: var(--primary); }
+    .fact-green .fact-title { color: var(--success); }
+    .fact-blue .fact-title { color: var(--info); }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 36px;
+    }
+
+    .toc h2 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 4px 24px;
+    }
+
+    .toc li { font-size: 13px; color: var(--text-muted); }
+    .toc a { color: var(--text-muted); }
+    .toc a:hover { color: var(--primary); }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 28px;
+      scroll-margin-top: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .section-number {
+      width: 28px;
+      height: 28px;
+      background: var(--primary-dim);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .section-body {
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-size: 14px;
+      padding-left: 38px;
+    }
+
+    .section-body ul, .section-body ol {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+
+    .section-body li { margin-bottom: 4px; }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 20px 0;
+    }
+
+    /* ── Summary Box ── */
+    .summary-box {
+      background: linear-gradient(135deg,
+        rgba(0,229,255,0.07) 0%,
+        rgba(100,255,218,0.05) 100%);
+      border: 1px solid rgba(0,229,255,0.25);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 36px;
+    }
+
+    .summary-box h3 {
+      color: var(--primary);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .check { color: var(--success); font-size: 16px; flex-shrink: 0; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      .wrapper { padding: 24px 16px 60px; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .key-facts { grid-template-columns: 1fr; }
+      .toc ol { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">✂️</div>
+    <div class="header-text">
+      <h1>TxtClipper</h1>
+      <p>Privacy Policy</p>
+    </div>
+  </div>
+
+  <div class="badges">
+    <span class="badge badge-cyan">Version 1.0.0</span>
+    <span class="badge badge-yellow">Last Updated: May 29, 2025</span>
+    <span class="badge badge-green">✓ Offline App</span>
+    <span class="badge badge-blue">Package: com.m77med.txtclipper</span>
+  </div>
+
+  <!-- Key Facts -->
+  <div class="key-facts">
+    <div class="key-fact fact-cyan">
+      <div class="fact-icon">📵</div>
+      <div>
+        <div class="fact-title">100% Offline</div>
+        <div class="fact-body">No internet connection used or required. Ever.</div>
+      </div>
+    </div>
+    <div class="key-fact fact-green">
+      <div class="fact-icon">🔒</div>
+      <div>
+        <div class="fact-title">Zero Data Collected</div>
+        <div class="fact-body">No personal data, text, or identifiers are collected.</div>
+      </div>
+    </div>
+    <div class="key-fact fact-blue">
+      <div class="fact-icon">👨‍👩‍👧‍👦</div>
+      <div>
+        <div class="fact-title">Safe for All Ages</div>
+        <div class="fact-body">COPPA compliant. Safe for children under 13.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#s1">Overview</a></li>
+      <li><a href="#s2">Information We Do NOT Collect</a></li>
+      <li><a href="#s3">Data Stored Locally</a></li>
+      <li><a href="#s4">Clipboard Access</a></li>
+      <li><a href="#s5">Permissions Requested</a></li>
+      <li><a href="#s6">Third-Party Services</a></li>
+      <li><a href="#s7">Data Sharing</a></li>
+      <li><a href="#s8">Data Security</a></li>
+      <li><a href="#s9">Children's Privacy (COPPA)</a></li>
+      <li><a href="#s10">Google Play Data Safety</a></li>
+      <li><a href="#s11">Your Rights</a></li>
+      <li><a href="#s12">California Privacy (CCPA)</a></li>
+      <li><a href="#s13">GDPR – European Users</a></li>
+      <li><a href="#s14">Changes to This Policy</a></li>
+      <li><a href="#s15">Open Source &amp; Transparency</a></li>
+      <li><a href="#s16">Governing Law</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <div class="section-title">Overview</div>
+    </div>
+    <div class="section-body">
+      <p>
+        This Privacy Policy describes how <strong>TxtClipper</strong> ("the App", "we", "our") handles
+        information when you use our mobile application available on Google Play
+        (package: <code>com.m77med.txtclipper</code>).
+      </p>
+      <p style="margin-top:10px;">
+        This policy was last updated on <strong>May 29, 2025</strong> and applies to all versions
+        of the App published after this date. By using the App, you agree to this policy.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <div class="section-title">Information We Do NOT Collect</div>
+    </div>
+    <div class="section-body">
+      <p>TxtClipper does not collect, store, process, or transmit any of the following:</p>
+      <ul>
+        <li>Personal identifiers (name, email, phone number, address)</li>
+        <li>Device identifiers (IMEI, Android ID, Advertising ID)</li>
+        <li>Location data (GPS, IP address, or network location)</li>
+        <li>Text content you enter or paste into the App</li>
+        <li>Usage statistics or in-app behavior data</li>
+        <li>Crash reports or diagnostic data</li>
+        <li>Financial or payment information</li>
+        <li>Photos, files, or media</li>
+        <li>Contacts or calendar data</li>
+        <li>Any other personal or sensitive information</li>
+      </ul>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div class="section-title">Data Stored Locally on Your Device</div>
+    </div>
+    <div class="section-body">
+      <p>The <strong>only</strong> data stored by TxtClipper is your theme preference (Dark or Light Mode). This setting:</p>
+      <ul>
+        <li>Is stored exclusively in your device's local storage (SharedPreferences)</li>
+        <li>Never leaves your device</li>
+        <li>Is not associated with any identity or account</li>
+        <li>Can be reset at any time by clearing app data in Android Settings</li>
+        <li>Is automatically deleted when you uninstall the App</li>
+      </ul>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <div class="section-title">Clipboard Access</div>
+    </div>
+    <div class="section-body">
+      <p>
+        TxtClipper provides a "Paste" button that reads text from your device clipboard
+        <strong>only when you explicitly tap it</strong>. This access:
+      </p>
+      <ul>
+        <li>Only occurs on explicit user action (tapping the Paste button)</li>
+        <li>Processes pasted text locally on your device only</li>
+        <li>Never stores, logs, or transmits clipboard content anywhere</li>
+        <li>Does NOT monitor your clipboard in the background</li>
+      </ul>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <div class="section-title">Permissions Requested</div>
+    </div>
+    <div class="section-body">
+      <p>TxtClipper requests <strong>zero</strong> sensitive Android permissions. The App does NOT request:</p>
+      <ul>
+        <li><code>INTERNET</code> permission</li>
+        <li><code>READ_EXTERNAL_STORAGE</code> or <code>WRITE_EXTERNAL_STORAGE</code></li>
+        <li><code>ACCESS_FINE_LOCATION</code> or <code>ACCESS_COARSE_LOCATION</code></li>
+        <li><code>READ_CONTACTS</code> or any other contact-related permissions</li>
+        <li><code>CAMERA</code> or <code>RECORD_AUDIO</code></li>
+        <li>Any billing or in-app purchase permissions</li>
+      </ul>
+      <p style="margin-top:10px;">
+        Clipboard read/write on Android does not require a declared manifest permission
+        for user-initiated actions (Android 10+).
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <div class="section-title">Third-Party Services</div>
+    </div>
+    <div class="section-body">
+      <p>TxtClipper does not integrate with <strong>any</strong> third-party services. The following are NOT present:</p>
+      <ul>
+        <li>Analytics platforms (Google Analytics, Firebase Analytics, etc.)</li>
+        <li>Advertising SDKs (AdMob, Meta Audience Network, etc.)</li>
+        <li>Crash reporting tools (Crashlytics, Sentry, Bugsnag, etc.)</li>
+        <li>Social media SDKs (Facebook SDK, Twitter SDK, etc.)</li>
+        <li>Cloud storage or sync services</li>
+        <li>Payment processors</li>
+        <li>Any external API calls whatsoever</li>
+      </ul>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <div class="section-title">Data Sharing</div>
+    </div>
+    <div class="section-body">
+      <p>
+        We do not share any data with third parties because we do not collect any data.
+        There is nothing to share. We will never sell, rent, lease, or provide user data
+        to any external entity for any purpose.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <div class="section-title">Data Security</div>
+    </div>
+    <div class="section-body">
+      <p>
+        The best security is not collecting data in the first place. Since TxtClipper
+        collects no user data and operates with no server infrastructure, there is
+        <strong>zero risk</strong> of a server-side data breach exposing your information.
+        The only local data (your theme preference) is non-sensitive and poses no privacy risk.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-number">9</div>
+      <div class="section-title">Children's Privacy (COPPA Compliance)</div>
+    </div>
+    <div class="section-body">
+      <p>
+        TxtClipper is safe for users of all ages, including children under the age of 13.
+        We do not knowingly collect personal information from any users. Because we collect
+        no data at all, TxtClipper fully complies with the
+        <strong>Children's Online Privacy Protection Act (COPPA)</strong> and similar
+        child privacy regulations worldwide.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-number">10</div>
+      <div class="section-title">Google Play Data Safety</div>
+    </div>
+    <div class="section-body">
+      <p>In compliance with Google Play's Data Safety requirements, we declare:</p>
+      <ul>
+        <li><strong>Data collected:</strong> None</li>
+        <li><strong>Data shared with third parties:</strong> None</li>
+        <li><strong>Security practices:</strong> No data transmitted (N/A)</li>
+        <li><strong>Data deletion request:</strong> N/A — no data collected</li>
+        <li><strong>Independent security review:</strong> N/A</li>
+      </ul>
+      <p style="margin-top:10px;">
+        This information is reflected in the Data Safety section of our Google Play Store listing.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 11 -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <div class="section-number">11</div>
+      <div class="section-title">Your Rights</div>
+    </div>
+    <div class="section-body">
+      <p>Because TxtClipper collects no personal data:</p>
+      <ul>
+        <li>There is no personal data to access, export, or download</li>
+        <li>There is no personal data to correct or update</li>
+        <li>There is no personal data to delete</li>
+        <li>There are no marketing communications to opt out of</li>
+      </ul>
+      <p style="margin-top:10px;">
+        To remove the local theme preference, go to:
+        <strong>Android Settings → Apps → TxtClipper → Storage → Clear Data</strong>.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 12 -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <div class="section-number">12</div>
+      <div class="section-title">California Privacy Rights (CCPA)</div>
+    </div>
+    <div class="section-body">
+      <p>
+        For California residents: TxtClipper does not sell personal information and has not
+        done so in the preceding 12 months. We do not collect personal information as defined
+        under the California Consumer Privacy Act (CCPA). The rights to know, delete, and
+        opt-out of sale are fully honored by our no-collection policy.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 13 -->
+  <div class="section" id="s13">
+    <div class="section-header">
+      <div class="section-number">13</div>
+      <div class="section-title">GDPR – European Users</div>
+    </div>
+    <div class="section-body">
+      <p>
+        For users in the European Economic Area (EEA): TxtClipper does not process any
+        personal data as defined by the <strong>General Data Protection Regulation (GDPR)</strong>.
+        We have no legal basis for processing because we process nothing. No Data Processing
+        Agreements are required, and no data protection officers need to be appointed.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 14 -->
+  <div class="section" id="s14">
+    <div class="section-header">
+      <div class="section-number">14</div>
+      <div class="section-title">Changes to This Privacy Policy</div>
+    </div>
+    <div class="section-body">
+      <p>We reserve the right to update this Privacy Policy at any time. When changes are made:</p>
+      <ul>
+        <li>The "Last Updated" date will be revised</li>
+        <li>The updated policy will be available within the App and at this URL</li>
+        <li>Continued use of the App after changes constitutes acceptance</li>
+      </ul>
+      <p style="margin-top:10px;">
+        We will never change our policy to begin collecting data without clearly notifying
+        users through a prominent app update notice.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 15 -->
+  <div class="section" id="s15">
+    <div class="section-header">
+      <div class="section-number">15</div>
+      <div class="section-title">Open Source &amp; Transparency</div>
+    </div>
+    <div class="section-body">
+      <p>TxtClipper uses only two third-party Flutter packages:</p>
+      <ul>
+        <li><strong>provider</strong> (v6.1.x) — State management. MIT License. No network access.</li>
+        <li><strong>shared_preferences</strong> (v2.3.x) — Local storage for theme preference. BSD License. No network access.</li>
+      </ul>
+      <p style="margin-top:10px;">Both packages are maintained by the Flutter/Google team and do not transmit any data.</p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Section 16 -->
+  <div class="section" id="s16">
+    <div class="section-header">
+      <div class="section-number">16</div>
+      <div class="section-title">Governing Law</div>
+    </div>
+    <div class="section-body">
+      <p>
+        This Privacy Policy shall be governed by applicable laws. Since no personal data
+        is collected or processed, jurisdictional conflicts regarding data protection law
+        are not applicable.
+      </p>
+    </div>
+    <hr class="divider" />
+  </div>
+
+  <!-- Summary Box -->
+  <div class="summary-box">
+    <h3>✅ In Summary</h3>
+    <div class="summary-item">
+      <span class="check">✓</span>
+      <span>No data collected — zero, none, nada</span>
+    </div>
+    <div class="summary-item">
+      <span class="check">✓</span>
+      <span>No internet connection used or needed</span>
+    </div>
+    <div class="summary-item">
+      <span class="check">✓</span>
+      <span>No third-party SDKs, analytics, or advertising</span>
+    </div>
+    <div class="summary-item">
+      <span class="check">✓</span>
+      <span>No account or sign-up required</span>
+    </div>
+    <div class="summary-item">
+      <span class="check">✓</span>
+      <span>No ads or any form of tracking</span>
+    </div>
+    <div class="summary-item">
+      <span class="check">✓</span>
+      <span>Safe for all ages including children under 13 (COPPA compliant)</span>
+    </div>
+    <div class="summary-item">
+      <span class="check">✓</span>
+      <span>GDPR &amp; CCPA compliant by design</span>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>TxtClipper</strong> &nbsp;|&nbsp; com.m77med.txtclipper &nbsp;|&nbsp; Version 1.0.0</p>
+    <p style="margin-top:6px;">Privacy Policy last updated: May 29, 2025</p>
+    <p style="margin-top:6px; font-style:italic;">
+      This app is a local-only utility. No servers. No tracking. No data.
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
